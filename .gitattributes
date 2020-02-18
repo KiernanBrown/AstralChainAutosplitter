@@ -1,0 +1,2 @@
+*.asl linguist-language=csharp
+LiveSplit/* linguist-vendored
