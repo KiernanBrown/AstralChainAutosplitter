@@ -1,4 +1,4 @@
-# Astral Chain Load Remover/Autosplitter
+# Astral Chain Autosplitter
 This is a Video Auto Splitter Profile which acts as an Autosplitter for Astral Chain Any% This goal of this tool is to provide runners with a standardized set of splits and split times. This allows for runners to split for every main section of the run without having to do so manually, and will give a more detailed view of where you can save time.
 
 ## Table of Contents
