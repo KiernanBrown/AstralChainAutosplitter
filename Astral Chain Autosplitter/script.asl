@@ -5,10 +5,8 @@ init
   vars.fileDummy = false;
   vars.caseDummy = false;
   vars.finalSplit = false;
-  vars.dummyFiles = new int[] { 12 };
+  vars.dummyFiles = new int[] { 10 };
   vars.endFiles = new int[] { 3, 9, 16, 24, 30, 41, 47, 50, 57, 65, 74 };
-  vars.frameCounter = 0;  // Buffer for loading screens, thanks to Denhonator
-  vars.framesNeeded = 6;
   features["end1"].pause();
   features["end2"].pause();
   vars.timerOffset = DateTime.Now;
@@ -54,26 +52,6 @@ update
     vars.finalSplit = false;
   }
   
-  // Count the frames for how long a load has lasted
-  if ((features["black1"].current > 95.0 
-  && features["black2"].current > 95.0 
-  && features["black3"].current > 95.0 
-  && features["black4"].current > 95.0 
-  && features["black5"].current > 95.0) 
-  || (features["white1"].current > 95.0 
-  && features["white2"].current > 95.0 
-  && features["white3"].current > 95.0 
-  && features["white4"].current > 95.0 
-  && features["white5"].current > 95.0) 
-  || (features["plane"].current > 82.0) 
-  || (features["transition"].current > 95.0))
-  {
-    vars.frameCounter += vars.frameCounter < 10 ? 1 : 0;
-  } 
-  else {
-    vars.frameCounter = 0;
-  }
-  
   vars.prevPhase = timer.CurrentPhase;
 }
 
@@ -84,7 +62,7 @@ start
     }
     
     if(features["start2"].min(500) > 60.0
-    && features["start1"].max(1000) > 65.0
+    && features["start1"].max(1000) > 60.0
     && features["start1"].current < 30.0
     && features["start3"].max(1000) < 80.0) {
       features["start1"].pause();
@@ -113,10 +91,10 @@ split
     features["end2"].pause();
     return true;
   }
-  else if (features["case"].current > 95.0
-  && features["blue"].current > 95.0 
-  && (features["case"].old < 95.0 
-  || features["blue"].old < 95.0))
+  else if (features["case"].current > 93.0
+  && features["blue"].max(300) > 93.0 
+  && (features["case"].old < 93.0 
+  || features["blue"].old < 93.0))
   {
     features["case"].pause(15000);
     features["blue"].pause(15000);
@@ -135,10 +113,4 @@ split
     return true;
   }
   else return false;
-}
-
-isLoading
-{
-  // Buffer to avoid false load detection, thanks to Denhonator
-  return vars.frameCounter >= vars.framesNeeded;
 }

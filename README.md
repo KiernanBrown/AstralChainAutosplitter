@@ -1,5 +1,5 @@
 # Astral Chain Load Remover/Autosplitter
-This is a Video Auto Splitter Profile for Astral Chain Any% The goal of this tool is to present a better timing method for Astral Chain Any% runs, which will remove inconsistent load times and lessen the gap between the physical and digital versions of the game.
+This is a Video Auto Splitter Profile which acts as an Autosplitter for Astral Chain Any% This goal of this tool is to provide runners with a standardized set of splits and split times. This allows for runners to split for every main section of the run without having to do so manually, and will give a more detailed view of where you can save time.
 
 ## Table of Contents
 * [Features](#features)
@@ -11,7 +11,6 @@ This is a Video Auto Splitter Profile for Astral Chain Any% The goal of this too
 
 
 ## Features <a name="features"></a>
-* Load removal for black screen loads, white screen loads, astral plane loads, and loads for transitioning between zones. The only known additional load times that are not being removed are the elevators up to the roof in Rayleigh Plaza, where the Digital Version saves about 4 seconds total across the run over the Physical Version.
 * Automatic timer start upon confirming character selection. The timer starts a bit later than this button press, but it adjusts the start time accordingly.
 * Automatic splits for case completion screens.
 * Automatic splits on black screen after ending a file.
@@ -25,17 +24,16 @@ Both of these have their own setup instructions which can be found on the sites 
 
 ## Setup <a name="setup"></a>  
 A tutorial video for setting up this Autosplitter can be found here so follow along with it: [![Thumbnail for YouTube tutorial video](http://img.youtube.com/vi/hbCzEasFT6k/0.jpg)](http://www.youtube.com/watch?v=hbCzEasFT6k "tutorialIMG")  
+[https://www.youtube.com/watch?v=hbCzEasFT6k](https://www.youtube.com/watch?v=hbCzEasFT6k)
 
-In LiveSplit, be sure to compare against Game Time instead of Real Time. The load remover only pauses the timer for Game Time, so if you're comparing against Real Time, it'll look like it's not working. This also allows you to set up two timers (one Game Time, one Real Time) to have both RTA and RTA with loads removed on your set of splits! 
-
-Also, if you are using the Autosplitter, make sure you don't adjust the number of splits in this splits file! The Autosplitter is designed to split at every file end and every time the case completion screen is shown, and will continue to do so even if you remove splits from the file. Feel free to rename splits as you want, just don't add or remove segments!
+For this current version, **make sure you don't adjust the number of splits in this splits file!** The Autosplitter is designed to split at every file end and every time the case completion screen is shown, and will continue to do so even if you remove splits from the file. Feel free to rename splits as you want, just don't add or remove segments!
 
 For the game itself, make sure that your brightness is set to 5. Modifying the brightness can affect some of the image recognition for splitting and can result in false detections for loads by making blacks darker or whites lighter.
 
 If you are having issues with the setup for this, feel free to send me a message on Discord (SwiftShadow#5004) and I can help troubleshoot!
 
 ## Known Issues <a name="issues"></a>
-* The Autosplitter can split twice on the first split of the run for some reason. I'm looking into this now.  
+* The Autosplitter can split twice on the first split of the run for some reason which I can't figure out. I have code written to prevent double splitting, but it still happens. For now, just undo a split if it does split multiple times. I'll continue looking into this for the future.  
 
 If you find any issues that are not listed above, please let me know about them by sending me a message on Discord!
 
